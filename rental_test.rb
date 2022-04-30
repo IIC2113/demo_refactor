@@ -15,7 +15,6 @@ describe "Movie rentals" do
   end
 
   it "correctly does statement" do
-    stmt = @c.statement
-    stmt.must_equal("Rental Record for Jane\n\t1984\t2\n\tPlatoon\t9\nAmount owed is 11\nYou earned 3 frequent renter points")
+    _(@c.statement).must_equal("Rental Record for Jane\n\t1984\t2\n\tPlatoon\t9\nAmount owed is 11\nYou earned 3 frequent renter points")
   end
 end
