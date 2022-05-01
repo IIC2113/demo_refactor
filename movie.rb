@@ -1,12 +1,30 @@
 # A movie that can be rented
 class Movie
-  REGULAR = 0
-  NEW_RELEASE = 1
-  CHILDRENS = 2
+  attr_reader :title, :movie_type
 
-  attr_reader :title, :price_code
+  def initialize(title, movie_type)
+    @title, @movie_type = title, movie_type
+  end
 
-  def initialize(title, price_code)
-    @title, @price_code = title, price_code
-  end 
+end
+
+class MovieType
+end
+
+class RegularMovieType < MovieType
+  def self.total_amount(days_rented)
+    2 + (days_rented > 2 ? (days_rented - 2) * 1.5 : 0)
+  end
+end
+
+class NewReleaseMovieType < MovieType
+  def self.total_amount(days_rented)
+    days_rented * 3
+  end
+end
+
+class ChildrensMovieType < MovieType
+  def self.total_amount(days_rented)
+    1.5 + (days_rented > 3 ? (days_rented - 3) * 1.5 : 0)
+  end
 end
