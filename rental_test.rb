@@ -1,4 +1,5 @@
 require_relative 'movie'
+require_relative 'movie_type'
 require_relative 'rental'
 require_relative 'customer'
 require 'minitest/autorun'
