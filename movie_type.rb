@@ -4,7 +4,7 @@ module MovieType
     raise NotImplementedError
   end
 
-  def total_renter_points(_)
+  def total_frequent_renter_points(_)
     1
   end
 end
@@ -26,7 +26,7 @@ class NewReleaseMovieType
     days_rented * 3
   end
 
-  def self.total_renter_points(days_rented)
+  def self.total_frequent_renter_points(days_rented)
     base_renter_points = super
     base_renter_points + (days_rented > 1 ? 1 : 0)
   end

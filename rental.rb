@@ -7,11 +7,11 @@ class Rental
     @days_rented = days_rented
   end
 
-  def total_amount
+  def amount
     @movie.movie_type.total_amount(@days_rented)
   end
 
-  def total_renter_points
-    @movie.movie_type.total_renter_points(@days_rented)
+  def frequent_renter_points
+    @movie.movie_type.total_frequent_renter_points(@days_rented)
   end
 end
